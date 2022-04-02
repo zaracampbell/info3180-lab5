@@ -6,7 +6,7 @@ This file creates your application.
 """
 
 from app import app
-from flask import render_template, request, send_file
+from flask import render_template, request, jsonify, send_file
 import os
 
 
@@ -16,21 +16,27 @@ import os
 
 @app.route('/')
 def index():
-    return send_file(os.path.join('../dist/', 'index.html'))
+    return jsonify(message="This is the beginning of our API")
 
 
 ###
 # The functions below should be applicable to all Flask apps.
 ###
 
-# Display Flask WTF errors as Flash messages
-def flash_errors(form):
+# Here we define a function to collect form errors from Flask-WTF
+# which we can later use
+def form_errors(form):
+    error_messages = []
+    """Collects form errors"""
     for field, errors in form.errors.items():
         for error in errors:
-            flash(u"Error in the %s field - %s" % (
-                getattr(form, field).label.text,
-                error
-            ), 'danger')
+            message = u"Error in the %s field - %s" % (
+                    getattr(form, field).label.text,
+                    error
+                )
+            error_messages.append(message)
+
+    return error_messages
 
 @app.route('/<file_name>.txt')
 def send_text_file(file_name):

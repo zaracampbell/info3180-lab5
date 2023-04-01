@@ -1,11 +1,8 @@
-<script>
-export default {
-    data() {
-        return {
-            message: "Hello World! This is Lab 7"
-        };
-    },
-}
+<script setup>
+import { ref } from "vue";
+
+let message = ref("Hello World! This is a VueJS and Flask Starter Template.")
+
 </script>
 
 <template>

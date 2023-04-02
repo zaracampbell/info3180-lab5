@@ -6,14 +6,10 @@
       </footer>
 </template>
 
-<script>
-export default {
-    data() {
-      return {
-          year: (new Date).getFullYear()
-      }        
-    }
-}
+<script setup>
+import { ref } from "vue";
+
+const year = (new Date).getFullYear();
 </script>
 
 <style>

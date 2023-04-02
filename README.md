@@ -1,6 +1,6 @@
-# info3180-lab7-vuejs-starter
+# INFO3180 VueJS and Flask Starter
 
-This template should help get you started developing with Vue 3 in Vite.
+This template should help get you started developing with Vue 3 on the forntend and Flask as an API on the backend.
 
 ## Recommended IDE Setup
 
@@ -35,6 +35,6 @@ Remember to always create a virtual environment and install the packages in your
 ```bash
 $ python -m venv venv (you may need to use python3 instead)
 $ source venv/bin/activate (or .\venv\Scripts\activate on Windows)
-$ pip install -r requirements.txt 
+$ pip install -r requirements.txt
 $ python run.py
 ```
